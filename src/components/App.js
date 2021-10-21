@@ -1,10 +1,9 @@
 import '../styles/App.css';
+import Routes from './Routes';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Tracking App</h1>
-    </div>
+    <Routes />
   );
 }
 
