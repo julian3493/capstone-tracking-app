@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const Registration = () => {
   const [user, setUser] = useState({
@@ -9,7 +10,19 @@ const Registration = () => {
   });
 
   const handleSubmit = (e) => {
-    console.log(user);
+    axios.post('http://localhost:3001/registrations', {
+      user: {
+        username: user.username,
+        email: user.email,
+        password: user.password,
+        password_confirmation: user.password_confirmation,
+      },
+    },
+    { withCredentials: true }).then((response) => {
+      console.log('registration res', response);
+    }).catch((err) => {
+      console.log('resgistration error', err);
+    });
     e.preventDefault();
   };
 
