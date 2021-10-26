@@ -1,10 +1,11 @@
 import React from 'react';
-import Registration from './Registration';
+import Login from './Login';
+// import Registration from './Registration';
 
 const Home = () => (
   <div>
     <h1>Home</h1>
-    <Registration />
+    <Login />
   </div>
 );
 
