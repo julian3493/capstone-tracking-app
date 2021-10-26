@@ -1,4 +1,6 @@
-import { LOGIN, SET_LOGGED_USER, USER_TRACKS } from './action-types';
+import {
+  LOGIN, LOGOUT, SET_LOGGED_USER, USER_TRACKS,
+} from './action-types';
 
 export const login = (apiResponse) => ({
   type: LOGIN,
@@ -13,4 +15,11 @@ export const userTracks = (apiResponse) => ({
 export const setLoggedUser = (user) => ({
   type: SET_LOGGED_USER,
   payload: user,
+});
+
+export const logout = () => ({
+  type: LOGOUT,
+  payload: {
+    logged_in: false,
+  },
 });
