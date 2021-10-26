@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../redux/actions/actions';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { login, setLoggedUser } from '../redux/actions/actions';
 
 const Registration = () => {
   const [user, setUser] = useState({
@@ -11,10 +12,11 @@ const Registration = () => {
     password_confirmation: '',
   });
 
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-  const handleSubmit = (e) => {
-    axios.post('http://localhost:3001/registrations', {
+  const fetchData = async () => {
+    await axios.post('http://localhost:3001/registrations', {
       user: {
         username: user.username,
         email: user.email,
@@ -23,12 +25,24 @@ const Registration = () => {
       },
     },
     { withCredentials: true }).then((response) => {
-      dispatch(login(response));
-      const loginState = useSelector((state) => state.login);
-      console.log(loginState);
+      if (response.data.status === 'created') {
+        dispatch(login({
+          status: 'created',
+          loggued_in: true,
+          user: response.data.user,
+        }));
+        dispatch(setLoggedUser(response.data.user));
+        history.push('/dashboard');
+      } else {
+        console.log(response.data);
+      }
     }).catch((err) => {
       console.log('resgistration error', err);
     });
+  };
+
+  const handleSubmit = (e) => {
+    fetchData();
     e.preventDefault();
   };
 

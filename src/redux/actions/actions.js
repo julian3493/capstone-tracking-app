@@ -1,4 +1,4 @@
-import { LOGIN, SET_USER, USER_TRACKS } from './action-types';
+import { LOGIN, SET_LOGGED_USER, USER_TRACKS } from './action-types';
 
 export const login = (apiResponse) => ({
   type: LOGIN,
@@ -10,7 +10,7 @@ export const userTracks = (apiResponse) => ({
   payload: apiResponse,
 });
 
-export const setUser = (user) => ({
-  type: SET_USER,
+export const setLoggedUser = (user) => ({
+  type: SET_LOGGED_USER,
   payload: user,
 });

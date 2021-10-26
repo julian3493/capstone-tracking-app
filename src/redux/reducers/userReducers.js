@@ -1,9 +1,9 @@
-import { SET_USER } from '../actions/action-types';
+import { SET_LOGGED_USER } from '../actions/action-types';
 
 const userReducer = (state = {}, { type, payload }) => {
   switch (type) {
-    case SET_USER:
-      return { payload };
+    case SET_LOGGED_USER:
+      return { ...payload };
     default:
       return { state };
   }
