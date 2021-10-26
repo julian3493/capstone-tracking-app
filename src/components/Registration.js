@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../redux/actions/actions';
 
 const Registration = () => {
   const [user, setUser] = useState({
@@ -8,6 +10,8 @@ const Registration = () => {
     password: '',
     password_confirmation: '',
   });
+
+  const dispatch = useDispatch;
 
   const handleSubmit = (e) => {
     axios.post('http://localhost:3001/registrations', {
@@ -19,7 +23,9 @@ const Registration = () => {
       },
     },
     { withCredentials: true }).then((response) => {
-      console.log('registration res', response);
+      dispatch(login(response));
+      const loginState = useSelector((state) => state.login);
+      console.log(loginState);
     }).catch((err) => {
       console.log('resgistration error', err);
     });
