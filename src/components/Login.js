@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { login, setLoggedUser } from '../redux/actions/actions';
+import TopBar from './TopBar';
+import '../styles/Login.css';
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -50,13 +52,21 @@ const Login = () => {
     e.preventDefault();
   };
 
+  const handleBack = (e) => {
+    history.push('/');
+    e.preventDefault();
+  };
+
   return (
-    <div className="form-div">
+    <div className="login-div">
+      {TopBar('Login')}
       <form className="login" onSubmit={handleSubmit}>
         <input type="email" name="email" placeholder="Email" value={user.email} onChange={handleChange} required />
         <input type="password" name="password" placeholder="Password" value={user.password} onChange={handleChange} required />
         <button type="submit">Login</button>
       </form>
+
+      <button className="backBtn" type="button" onClick={handleBack}>Back</button>
     </div>
   );
 };
