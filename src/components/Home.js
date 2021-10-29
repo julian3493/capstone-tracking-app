@@ -1,10 +1,11 @@
 import React from 'react';
 import Login from './Login';
+import TopBar from './TopBar';
 // import Registration from './Registration';
 
 const Home = () => (
   <div>
-    <h1>Home</h1>
+    {TopBar('App Tracker')}
     <Login />
   </div>
 );
