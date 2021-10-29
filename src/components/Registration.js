@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { login, setLoggedUser } from '../redux/actions/actions';
+import TopBar from './TopBar';
+import '../styles/Registration.css';
 
 const Registration = () => {
   const [user, setUser] = useState({
@@ -54,15 +56,23 @@ const Registration = () => {
     e.preventDefault();
   };
 
+  const handleBack = (e) => {
+    history.push('/');
+    e.preventDefault();
+  };
+
   return (
-    <div className="form-div">
-      <form className="resgister" onSubmit={handleSubmit}>
+    <div className="register-div">
+      {TopBar('New Account')}
+      <form className="register" onSubmit={handleSubmit}>
         <input type="text" name="username" placeholder="Username" value={user.username} onChange={handleChange} required />
         <input type="email" name="email" placeholder="Email" value={user.email} onChange={handleChange} required />
         <input type="password" name="password" placeholder="Password" value={user.password} onChange={handleChange} required />
         <input type="password" name="password_confirmation" placeholder="Password confirmation" value={user.password_confirmation} onChange={handleChange} required />
         <button type="submit">Register</button>
       </form>
+
+      <button className="backBtn" type="button" onClick={handleBack}>Back</button>
     </div>
   );
 };
