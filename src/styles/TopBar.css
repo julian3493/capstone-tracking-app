@@ -1,0 +1,13 @@
+.top {
+  display: flex;
+  height: 70px;
+  background-color: #41b5e8;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-title {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+}

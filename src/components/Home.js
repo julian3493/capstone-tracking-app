@@ -1,12 +1,14 @@
 import React from 'react';
-import Login from './Login';
+import { Link } from 'react-router-dom';
 import TopBar from './TopBar';
-// import Registration from './Registration';
 
 const Home = () => (
   <div>
     {TopBar('App Tracker')}
-    <Login />
+    <div>
+      <Link to="/login">Login</Link>
+      <Link to="/registration">Create Account</Link>
+    </div>
   </div>
 );
 

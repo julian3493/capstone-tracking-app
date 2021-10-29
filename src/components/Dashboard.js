@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import Logout from './Logout';
 import Navigation from './Navigation';
+import TopBar from './TopBar';
 
 const devices = [
   'pc_laptop',
@@ -49,7 +50,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Dashboard</h1>
+      {TopBar('Dashboard')}
       <form className="resgister" onSubmit={handleSubmit}>
         <p>Select Type:&nbsp;&nbsp;</p>
         <select name="electrodomestic" onChange={handleChange}>
