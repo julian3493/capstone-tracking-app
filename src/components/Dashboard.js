@@ -4,6 +4,7 @@ import axios from 'axios';
 import Logout from './Logout';
 import Navigation from './Navigation';
 import TopBar from './TopBar';
+import '../styles/Dashboard.css';
 
 const devices = [
   'pc_laptop',
@@ -49,10 +50,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
+    <div className="screen">
       {TopBar('Dashboard')}
-      <form className="resgister" onSubmit={handleSubmit}>
-        <p>Select Type:&nbsp;&nbsp;</p>
+      <form className="track-form" onSubmit={handleSubmit}>
+        <p className="select-label">Select Type:&nbsp;&nbsp;</p>
         <select name="electrodomestic" onChange={handleChange}>
           {setOpt()}
         </select>
@@ -61,8 +62,8 @@ const Dashboard = () => {
         <input type="number" name="watts" placeholder="Watts" onChange={handleChange} required />
         <button type="submit">Create</button>
       </form>
-      <Navigation />
       <Logout />
+      <Navigation />
     </div>
   );
 };
