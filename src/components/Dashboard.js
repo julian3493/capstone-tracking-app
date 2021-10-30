@@ -28,7 +28,7 @@ const Dashboard = () => {
   });
 
   const fetchData = async () => {
-    await axios.post('http://localhost:3001/tracks', track,
+    await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/tracks', track,
       { withCredentials: true }).then((response) => {
       console.log(response);
     }).catch((err) => {

@@ -12,7 +12,7 @@ const TracksPage = () => {
   const dispatch = useDispatch();
 
   const fetchData = async () => {
-    await axios.get('http://localhost:3001/tracks',
+    await axios.get('https://julian-comsumption-tracker-api.herokuapp.com/tracks',
       { withCredentials: true }).then((response) => {
       if (response.data.registers) {
         const tracks = response.data.registers;

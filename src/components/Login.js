@@ -16,7 +16,7 @@ const Login = () => {
   const history = useHistory();
 
   const fetchData = async () => {
-    await axios.post('http://localhost:3001/sessions', {
+    await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/sessions', {
       user: {
         email: user.email,
         password: user.password,

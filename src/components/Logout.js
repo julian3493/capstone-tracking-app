@@ -10,7 +10,7 @@ const Logout = () => {
   const history = useHistory();
 
   const fetchData = async () => {
-    await axios.delete('http://localhost:3001/logout',
+    await axios.delete('https://julian-comsumption-tracker-api.herokuapp.com/logout',
       { withCredentials: true }).then((response) => {
       console.log(response);
       if (response.data.status && response.data.status === 200) {
