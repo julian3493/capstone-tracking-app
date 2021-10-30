@@ -1,0 +1,17 @@
+.nav-div {
+  background-color: #41b5e8;
+  height: 10%;
+  margin-top: auto;
+  display: flex;
+  text-align: center;
+}
+
+.nav-link {
+  width: 25%;
+  border: 1px solid white;
+  padding-top: 5%;
+}
+
+.nav-link:hover {
+  background-color: #313944;
+}

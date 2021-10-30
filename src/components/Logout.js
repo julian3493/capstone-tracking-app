@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { logout } from '../redux/actions/actions';
+import '../styles/Logout.css';
 
 const Logout = () => {
   const dispatch = useDispatch();
@@ -23,13 +24,10 @@ const Logout = () => {
 
   const logoutClick = () => {
     fetchData();
-    console.log('logout');
   };
 
   return (
-    <div>
-      <button type="button" onClick={logoutClick}>Logout</button>
-    </div>
+    <button className="logoutBtn" type="button" onClick={logoutClick}>Logout</button>
   );
 };
 
