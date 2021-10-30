@@ -26,7 +26,7 @@ const Login = () => {
       if (response.data.status === 'created') {
         dispatch(login({
           status: 'created',
-          loggued_in: true,
+          logged_in: true,
           user: response.data.user,
         }));
         dispatch(setLoggedUser(response.data.user));

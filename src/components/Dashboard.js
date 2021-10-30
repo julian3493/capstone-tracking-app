@@ -18,7 +18,7 @@ const setOpt = () => devices.map((device) => <option value={device} key={device}
 
 const Dashboard = () => {
   const user = useSelector((state) => (state.logged_user));
-
+  console.log(user);
   const [track, setTrack] = useState({
     electrodomestic: 'pc_laptop',
     day: '',
@@ -28,7 +28,7 @@ const Dashboard = () => {
   });
 
   const fetchData = async () => {
-    await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/tracks', track,
+    await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/tracks', { ...track },
       { withCredentials: true }).then((response) => {
       console.log(response);
     }).catch((err) => {
