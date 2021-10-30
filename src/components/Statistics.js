@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { userTracks } from '../redux/actions/actions';
+import TopBar from './TopBar';
 import Navigation from './Navigation';
+import Logout from './Logout';
+import '../styles/Statistics.css';
 
 const Statistics = () => {
   const trackStored = useSelector((state) => state.tracks);
@@ -56,32 +59,42 @@ const Statistics = () => {
   }, []);
 
   return (
-    <div>
-      <p>
-        Pc laptop:
-        {pcLaptop}
-        Watts
-      </p>
-      <p>
-        Tv:
-        {tv}
-        Watts
-      </p>
-      <p>
-        Console:
-        {videogamesConsole}
-        Watts
-      </p>
-      <p>
-        Blueray:
-        {blueray}
-        Watts
-      </p>
-      <p>
-        Pc Desktop:
-        {pcDesktop}
-        Watts
-      </p>
+    <div className="screen">
+      {TopBar('Statistics')}
+      <div className="stats-body">
+        <h3 className="stat-title">Total consumed</h3>
+        <p className="p-stat">
+          Pc laptop:
+          &nbsp;
+          {pcLaptop}
+          Watts
+        </p>
+        <p className="p-stat">
+          Tv:
+          &nbsp;
+          {tv}
+          Watts
+        </p>
+        <p className="p-stat">
+          Console:
+          &nbsp;
+          {videogamesConsole}
+          Watts
+        </p>
+        <p className="p-stat">
+          Blueray:
+          &nbsp;
+          {blueray}
+          Watts
+        </p>
+        <p className="p-stat">
+          Pc Desktop:
+          &nbsp;
+          {pcDesktop}
+          Watts
+        </p>
+      </div>
+      <Logout />
       <Navigation />
     </div>
   );

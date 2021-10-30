@@ -1,19 +1,23 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Logout from './Logout';
 import Navigation from './Navigation';
 import TopBar from './TopBar';
+import '../styles/More.css';
 
 const More = () => {
   const user = useSelector((state) => state.logged_user);
   const { username } = user;
 
   return (
-    <div>
+    <div className="screen">
       {TopBar('More')}
-      <p>
+      <p className="more-content">
         Welcome
+        &nbsp;
         {username}
       </p>
+      <Logout />
       <Navigation />
     </div>
   );

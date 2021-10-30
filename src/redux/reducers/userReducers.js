@@ -5,7 +5,7 @@ const userReducer = (state = {}, { type, payload }) => {
     case SET_LOGGED_USER:
       return { ...payload };
     default:
-      return { state };
+      return { ...state };
   }
 };
 
