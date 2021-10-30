@@ -19,6 +19,9 @@ const Registration = () => {
 
   const fetchData = async () => {
     await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/registrations', {
+      headers: {
+        'Test-header': 'Test-value'
+      },
       user: {
         username: user.username,
         email: user.email,
