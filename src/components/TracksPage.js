@@ -5,6 +5,8 @@ import Logout from './Logout';
 import Navigation from './Navigation';
 import { userTracks } from '../redux/actions/actions';
 import Tracks from './Tracks';
+import TopBar from './TopBar';
+import '../styles/TracksPage.css';
 
 const TracksPage = () => {
   const dispatch = useDispatch();
@@ -26,11 +28,11 @@ const TracksPage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Tracks</h1>
+    <div className="screen">
+      {TopBar('Tracks')}
       <Tracks />
-      <Navigation />
       <Logout />
+      <Navigation />
     </div>
   );
 };
