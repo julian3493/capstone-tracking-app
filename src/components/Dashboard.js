@@ -22,8 +22,8 @@ const Dashboard = () => {
   const [track, setTrack] = useState({
     electrodomestic: 'pc_laptop',
     day: '',
-    time_connected: '',
-    watts: '',
+    time_connected: 0,
+    watts: 0,
   });
 
   const fetchData = async () => {
@@ -65,9 +65,9 @@ const Dashboard = () => {
         <select name="electrodomestic" onChange={handleChange}>
           {setOpt()}
         </select>
-        <input type="date" name="day" onChange={handleChange} required />
-        <input type="number" name="time_connected" placeholder="Time" onChange={handleChange} required />
-        <input type="number" name="watts" placeholder="Watts" onChange={handleChange} required />
+        <input type="date" name="day" value={track.day} onChange={handleChange} required />
+        <input type="number" name="time_connected" placeholder="Time" value={track.time_connected} onChange={handleChange} required />
+        <input type="number" name="watts" placeholder="Watts" value={track.watts} onChange={handleChange} required />
         <button type="submit">Create</button>
       </form>
       <Logout />
