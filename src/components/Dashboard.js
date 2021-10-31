@@ -18,18 +18,26 @@ const setOpt = () => devices.map((device) => <option value={device} key={device}
 
 const Dashboard = () => {
   const user = useSelector((state) => (state.logged_user));
-  console.log(user);
+
   const [track, setTrack] = useState({
     electrodomestic: 'pc_laptop',
     day: '',
     time_connected: '',
     watts: '',
-    user_id: user.id,
   });
 
   const fetchData = async () => {
-    await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/tracks', { ...track },
-      { withCredentials: true }).then((response) => {
+    console.log(track);
+    await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/tracks', {
+      track: {
+        electrodomestic: track.electrodomestic,
+        day: track.day,
+        time_connected: track.time_connected,
+        watts: track.watts,
+        user_id: user.id,
+      },
+    },
+    { withCredentials: true }).then((response) => {
       console.log(response);
     }).catch((err) => {
       console.log('resgistration error', err);
