@@ -28,6 +28,7 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     console.log(track);
+    console.log(user);
     await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/tracks', {
       track: {
         electrodomestic: track.electrodomestic,
