@@ -12,13 +12,12 @@ const Logout = () => {
   const fetchData = async () => {
     await axios.delete('http://localhost:3001/logout',
       { withCredentials: true }).then((response) => {
-      console.log(response);
       if (response.data.status && response.data.status === 200) {
         dispatch(logout());
         history.push('/');
       }
     }).catch((err) => {
-      console.log('resgistration error', err);
+      throw (err);
     });
   };
 
