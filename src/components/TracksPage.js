@@ -12,7 +12,7 @@ const TracksPage = () => {
   const dispatch = useDispatch();
 
   const fetchData = async () => {
-    await axios.get('https://julian-comsumption-tracker-api.herokuapp.com/tracks',
+    await axios.get('http://localhost:3001/tracks',
       { withCredentials: true }).then((response) => {
       if (response.data.registers) {
         const tracks = response.data.registers;
@@ -29,7 +29,7 @@ const TracksPage = () => {
 
   return (
     <div className="screen">
-      {TopBar('Tracks')}
+      {TopBar({ title: 'Tracks' })}
       <Tracks />
       <Logout />
       <Navigation />

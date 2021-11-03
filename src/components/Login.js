@@ -16,7 +16,7 @@ const Login = () => {
   const history = useHistory();
 
   const fetchData = async () => {
-    await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/sessions', {
+    await axios.post('http://localhost:3001/sessions', {
       user: {
         email: user.email,
         password: user.password,
@@ -59,7 +59,7 @@ const Login = () => {
 
   return (
     <div className="login-div">
-      {TopBar('Login')}
+      {TopBar({ title: 'Login' })}
       <form className="login" onSubmit={handleSubmit}>
         <input type="email" name="email" placeholder="Email" value={user.email} onChange={handleChange} required />
         <input type="password" name="password" placeholder="Password" value={user.password} onChange={handleChange} required />

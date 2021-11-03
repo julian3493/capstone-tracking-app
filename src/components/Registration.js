@@ -18,7 +18,7 @@ const Registration = () => {
   const history = useHistory();
 
   const fetchData = async () => {
-    await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/registrations', {
+    await axios.post('http://localhost:3001/registrations', {
       user: {
         username: user.username,
         email: user.email,
@@ -63,7 +63,7 @@ const Registration = () => {
 
   return (
     <div className="register-div">
-      {TopBar('New Account')}
+      {TopBar({ title: 'New Account' })}
       <form className="register" onSubmit={handleSubmit}>
         <input type="text" name="username" placeholder="Username" value={user.username} onChange={handleChange} required />
         <input type="email" name="email" placeholder="Email" value={user.email} onChange={handleChange} required />

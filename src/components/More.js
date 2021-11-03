@@ -11,7 +11,7 @@ const More = () => {
 
   return (
     <div className="screen">
-      {TopBar('More')}
+      {TopBar({ title: 'More' })}
       <p className="more-content">
         Welcome
         &nbsp;

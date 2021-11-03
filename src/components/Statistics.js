@@ -43,7 +43,7 @@ const Statistics = () => {
   const dispatch = useDispatch();
 
   const fetchData = async () => {
-    await axios.get('https://julian-comsumption-tracker-api.herokuapp.com/tracks',
+    await axios.get('http://localhost:3001/tracks',
       { withCredentials: true }).then((response) => {
       if (response.data.registers) {
         const tracks = response.data.registers;
@@ -60,7 +60,7 @@ const Statistics = () => {
 
   return (
     <div className="screen">
-      {TopBar('Statistics')}
+      {TopBar({ title: 'Statistics' })}
       <div className="stats-body">
         <h3 className="stat-title">Total consumed</h3>
         <p className="p-stat">

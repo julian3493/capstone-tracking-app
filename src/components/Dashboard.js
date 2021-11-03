@@ -30,7 +30,7 @@ const Dashboard = () => {
     console.log(track);
     console.log(track.day);
     console.log(user);
-    await axios.post('https://julian-comsumption-tracker-api.herokuapp.com/tracks', {
+    await axios.post('http://localhost:3001/tracks', {
       track: {
         electrodomestic: track.electrodomestic,
         day: track.day,
@@ -61,7 +61,7 @@ const Dashboard = () => {
 
   return (
     <div className="screen">
-      {TopBar('Dashboard')}
+      {TopBar({ title: 'Dashboard' })}
       <form className="track-form" onSubmit={handleSubmit}>
         <p className="select-label">Select Type:&nbsp;&nbsp;</p>
         <select name="electrodomestic" onChange={handleChange}>
