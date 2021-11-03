@@ -27,9 +27,6 @@ const Dashboard = () => {
   });
 
   const fetchData = async () => {
-    console.log(track);
-    console.log(track.day);
-    console.log(user);
     await axios.post('http://localhost:3001/tracks', {
       track: {
         electrodomestic: track.electrodomestic,
@@ -42,7 +39,7 @@ const Dashboard = () => {
     { withCredentials: true }).then((response) => {
       console.log(response);
     }).catch((err) => {
-      console.log('resgistration error', err);
+      throw (err);
     });
   };
 

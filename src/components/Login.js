@@ -31,11 +31,9 @@ const Login = () => {
         }));
         dispatch(setLoggedUser(response.data.user));
         history.push('/dashboard');
-      } else {
-        console.log(response.data);
       }
     }).catch((err) => {
-      console.log('resgistration error', err);
+      throw (err);
     });
   };
 
