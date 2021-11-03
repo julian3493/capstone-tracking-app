@@ -50,7 +50,7 @@ const Statistics = () => {
         dispatch(userTracks(tracks));
       }
     }).catch((err) => {
-      console.log('resgistration error', err);
+      throw (err);
     });
   };
 

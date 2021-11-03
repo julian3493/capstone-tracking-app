@@ -37,7 +37,7 @@ const Dashboard = () => {
       },
     },
     { withCredentials: true }).then((response) => {
-      console.log(response);
+      console.log(response); // eslint-disable-line no-console
     }).catch((err) => {
       throw (err);
     });
