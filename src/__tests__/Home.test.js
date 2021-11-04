@@ -7,15 +7,16 @@ import store from '../redux/store';
 
 it('it tests the render Home correctly', () => {
   const home = renderer
-    .create(<Provider store={store}>
-      <BrowserRouter>
-        <Home />
-      </BrowserRouter>
-    </Provider>)
+    .create(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>,
+    )
     .toJSON();
   expect(home).toMatchSnapshot();
 });
-
 
 describe('render correctly the topbar component', () => {
   it('renders the topbar', () => {
@@ -53,7 +54,7 @@ describe('render correctly the login and create buttons', () => {
       </Provider>,
     );
     const options = document.querySelector('.options');
-    expect(options.firstChild.innerHTML).toEqual('<a href=\"/login\">Login</a>');
+    expect(options.firstChild.innerHTML).toEqual('<a href="/login">Login</a>');
   });
 
   it('show a create account button', () => {
@@ -65,6 +66,6 @@ describe('render correctly the login and create buttons', () => {
       </Provider>,
     );
     const options = document.querySelector('.options');
-    expect(options.lastChild.innerHTML).toEqual('<a href=\"/registration\">Create Account</a>');
+    expect(options.lastChild.innerHTML).toEqual('<a href="/registration">Create Account</a>');
   });
 });

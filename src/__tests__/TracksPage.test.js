@@ -7,11 +7,13 @@ import store from '../redux/store';
 
 it('it tests the render TracksPage correctly', () => {
   const tracksPage = renderer
-    .create(<Provider store={store}>
-      <BrowserRouter>
-        <TracksPage />
-      </BrowserRouter>
-    </Provider>)
+    .create(
+      <Provider store={store}>
+        <BrowserRouter>
+          <TracksPage />
+        </BrowserRouter>
+      </Provider>,
+    )
     .toJSON();
   expect(tracksPage).toMatchSnapshot();
 });

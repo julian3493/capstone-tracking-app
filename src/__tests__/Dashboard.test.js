@@ -7,11 +7,13 @@ import store from '../redux/store';
 
 it('it tests the render Dashboard correctly', () => {
   const dashboard = renderer
-    .create(<Provider store={store}>
-      <BrowserRouter>
-        <Dashboard />
-      </BrowserRouter>
-    </Provider>)
+    .create(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Dashboard />
+        </BrowserRouter>
+      </Provider>,
+    )
     .toJSON();
   expect(dashboard).toMatchSnapshot();
 });
