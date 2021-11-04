@@ -35,6 +35,10 @@ To get a local copy up and running follow these simple example steps.
 
 Run the App locally using `npm start`
 
+### Test
+
+Use `npm test` to run tests
+
 ## Author
 ​
 👤 **Julian Ramos**

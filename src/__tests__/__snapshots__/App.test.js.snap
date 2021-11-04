@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it tests the render App correctly 1`] = `
+<div>
+  <div
+    className="top"
+  >
+    <p
+      className="top-title"
+    >
+      App Tracker
+    </p>
+  </div>
+  <div
+    className="options"
+  >
+    <button
+      type="button"
+    >
+      <a
+        href="/login"
+        onClick={[Function]}
+      >
+        Login
+      </a>
+    </button>
+    <button
+      type="button"
+    >
+      <a
+        href="/registration"
+        onClick={[Function]}
+      >
+        Create Account
+      </a>
+    </button>
+  </div>
+</div>
+`;
