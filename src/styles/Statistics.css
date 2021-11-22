@@ -1,0 +1,23 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.stats-body {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 35px;
+  padding: 20px;
+  background-color: #f3f4f6;
+}
+
+.stat-title {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #41b5e8;
+}
+
+.p-stat {
+  margin-bottom: 5px;
+}

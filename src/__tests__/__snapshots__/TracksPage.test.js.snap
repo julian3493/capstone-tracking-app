@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it tests the render TracksPage correctly 1`] = `
+<div
+  className="screen"
+>
+  <div
+    className="top"
+  >
+    <p
+      className="top-title"
+    >
+      Tracks
+    </p>
+  </div>
+  <div
+    className="track-rows"
+  >
+    <p>
+       
+    </p>
+  </div>
+  <button
+    className="logoutBtn"
+    onClick={[Function]}
+    type="button"
+  >
+    Logout
+  </button>
+  <div
+    className="nav-div"
+  >
+    <a
+      className="nav-link"
+      href="/dashboard"
+      onClick={[Function]}
+    >
+      Dashboard
+    </a>
+    <a
+      className="nav-link"
+      href="/tracks"
+      onClick={[Function]}
+    >
+      Tracks
+    </a>
+    <a
+      className="nav-link"
+      href="/statistics"
+      onClick={[Function]}
+    >
+      Statistics
+    </a>
+    <a
+      className="nav-link"
+      href="/more"
+      onClick={[Function]}
+    >
+      More
+    </a>
+  </div>
+</div>
+`;

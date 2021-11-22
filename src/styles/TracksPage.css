@@ -1,0 +1,21 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.track-rows {
+  margin: 40px 35px;
+  padding: 20px 0;
+  background-color: #f3f4f6;
+}
+
+.track-row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+}

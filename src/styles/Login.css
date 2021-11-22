@@ -1,0 +1,24 @@
+.login-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.login {
+  margin: 40px 35px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f3f4f6;
+}
+
+.login input {
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+.backBtn {
+  align-self: center;
+  width: 30%;
+}
